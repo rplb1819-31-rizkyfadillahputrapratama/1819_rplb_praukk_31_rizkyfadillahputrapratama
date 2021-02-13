@@ -12,9 +12,15 @@
 */
 
 Route::get('/', function () {
-    return view('login.index');
+    return view('welcome');
 });
 
-Auth::routes();
+Route::get('/login', 'LoginController@index');
 
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/register', 'RegisterController@index');
+
+Route::get('/dashboard', 'DashboardController@index');
+
+// Auth::routes();
+
+// Route::get('/home', 'HomeController@index')->name('home');
